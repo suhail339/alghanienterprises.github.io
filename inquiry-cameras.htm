@@ -107,167 +107,63 @@
                 </div>
             </div>
             <div class="row">
-
-                <div class="slider2 flexslider">
-                    <ul class="slides">
-                        <li>
-                            <div class="row">
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/1.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Business Solutions</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/2.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Visions and Future</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/3.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Time Management</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/4.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Enjoying Victories</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/3.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Business Solutions</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/4.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Visions and Future</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/1.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Time Management</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="span3 square-1">
-                                        <div class="img-container">
-                                            <img src="img/our-team/2.jpg" alt="">
-                                            <div class="img-bg-icon"></div>
-                                        </div>
-                                        <h4>Enjoying Victories</h4>
-                                        Mauris sit amet ligula est, eget it conseact etur lectus
-                                    </div>
-                                </a>
-
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
                 <!-- Blog Form -->
-                <form class="form-comment" method="post" action="#">
+                <form class="form-comment" id="contactForm" name="contactForm" method="post" action="http://alghani-email.gear.host/api/email">
                     <div class="row">
                         <div class="span4">
-                            E-mail * (never published)<br>
-                            <input type="text" value=""><br>
+                            <input name="blank" id="blank" type="hidden">
+                            <input name="contactType" id="contactType" value="contact" type="hidden">
+                            <input name="name" id="name" maxlength="20" required type="text" placeholder="Name">
                         </div>
                         <div class="span4">
-                            Name<br>
-                            <input type="text" value="">
+                            <input name="email" id="email" maxlength="30" required type="email" placeholder="your-email-id@company.com">
+                            <br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="span4">
-                            Cameras<br>
-                            <select>
-                                <option value="camera1">Camera 1</option>
-                                <option value="camera1">Camera 2</option>
-                                <option value="camera1">Camera 3</option>
-                            </select>
+                            <input name="phone" id="phone" type="text" maxlength="20" placeholder="XXXXXXXXXXX">
                         </div>
                         <div class="span4">
-                            Quantity<br>
-                            <select>
-                                <option value="1">1</option>
-                                <option value="2">3</option>
-                                <option value="3">5</option>
-                            </select>
+                            <input name="instName" id="instName" type="text" maxlength="10" placeholder="Company Name">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="span4">
-                            Address<br>
-                            <input type="text" value=""><br>
+                        <div class="span4" style="margin-top:10px;">
+                            <select id="cameraType" name="cameraType" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option value="HIK Vision" selected>HIK Vision</option>
+                                <option value="Bullet">Bullet</option>
+                                <option value="Others">Other</option>
+                            </select>
                         </div>
                         <div class="span4">
-                            Institute/Organization<br>
-                            <input type="text" value="">
+                               <input name="cameraQuantity" id="cameraQuantity" type="number" maxlength="10" placeholder="1">
                         </div>
                     </div>
                     <div class="row">
                         <div class="span8">
-                            Message * <br>
-                            <textarea></textarea>
+                            <textarea name="message" id="message" maxlength="500"></textarea>
                         </div>
                     </div>
-
                     <div class="row space20"></div>
-
+                    <div class="g-recaptcha" data-sitekey="6LeV8DcUAAAAANUqxd7WhrHpUoWd0HNRyTbbUIef"></div>
+                    <div class="row space20"></div>
                     <div class="row">
-                        <div class="span4 thank">
-                            Thank You for Message!
+                        <div class="span2">
+                            <button class="btn left"><i class="icon-ok"></i> Send Message</button>
                         </div>
-                        <div class="span4">
-                            <button class="btn f-right"><i class="icon-ok"></i> Send Message</button>
+                        <div class="span6">
+                            <div class="alert alert-error error" id="errDiv" style="display:none;">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Error!</strong> Message sending failed, try again.
+                            </div>
+                            <div class="alert alert-success thank" id="sccDiv" style="display:none;">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Thank You!</strong> Your message successfully sent.
+                            </div>
                         </div>
                     </div>
+                    <div class="row space20"></div>
                 </form>
                 <!-- Blog Form End -->
 
@@ -297,6 +193,41 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
 
+    var frm = $('#contactForm');
+
+    frm.submit(function (e) {
+        e.preventDefault();
+        $("#errDiv").hide();
+        $("#sccDiv").hide();
+        var a = frm.serialize();
+        console.log(a);
+        var b = JSON.stringify(a);
+        console.log(b);
+        $.ajax({
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+            },
+            type: "POST", /* or type:"GET" or type:"PUT" */
+            dataType: "json",
+            url: frm.attr('action'),
+            data: JSON.stringify(a),
+            success: function (data) {
+                $("#sccDiv").show();
+                $("#errDiv").hide();
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                $("#errDiv").show();
+                $("#sccDiv").hide();
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+    </script>
 </body>
 </html>
