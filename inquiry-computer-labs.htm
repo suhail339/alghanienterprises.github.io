@@ -81,7 +81,7 @@
         <div class="container">
 
             <div class="eight columns">
-                <h3 class="left">Cameras & Installation</h3>
+                <h3 class="left">Computer Lab</h3>
             </div>
 
             <div class="eight columns">
@@ -89,7 +89,7 @@
                     <ul>
                         <li>You are here:</li>
                         <li><a href="#">Inquiry</a></li>
-                        <li>Cameras & Installation</li>
+                        <li>Computer Lab</li>
                     </ul>
                 </nav>
             </div>
@@ -107,6 +107,107 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Blog Form -->
+                <form class="form-comment" id="contactForm" name="contactForm" method="post" action="http://alghani-email.gear.host/api/email">
+                    <div class="row">
+                        <div class="span4">
+                            <input name="blank" id="blank" type="hidden">
+                            <input name="contactType" id="contactType" value="inquiry-computer-lab" type="hidden">
+                            <input name="name" id="name" maxlength="20" required type="text" placeholder="Name">
+                        </div>
+                        <div class="span4">
+                            <input name="email" id="email" maxlength="30" required type="email" placeholder="your-email-id@company.com">
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span4">
+                            <input name="phone" id="phone" type="text" maxlength="20" placeholder="XXXXXXXXXXX">
+                        </div>
+                        <div class="span4">
+                            <input name="instName" id="instName" type="text" maxlength="10" placeholder="Company Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span8" style="margin-top:10px;">
+                            <select id="system" name="system" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Select System</option>
+                                <option value="core2duo">Core 2 Duo</option>
+                                <option value="dualcore">Dual Core</option>
+                                <option value="Other">OTHER</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4">
+                                <input name="attendees" id="attendees" type="number" maxlength="10" placeholder="No. Of Users">
+                            </div>
+                            <div class="span4" style="margin-top:10px;">
+                                <select id="workStation" name="workStation" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                    <option selected disabled>Work Station ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4" style="margin-top:10px;">
+                                <select id="projector" name="projector" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                    <option selected disabled>Projector ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="span4" style="margin-top:10px;">
+                                <select id="networking" name="networking" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                    <option selected disabled>Networking ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4" style="margin-top:10px;">
+                                <select id="lcd" name="lcd" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                    <option selected disabled>LCD ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="span4" style="margin-top:10px;">
+                                <select id="printerScanner" name="printerScanner" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                    <option selected disabled>Printer/Scanner ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span8">
+                                <textarea name="message" id="message" maxlength="500"></textarea>
+                            </div>
+                        </div>
+                        <div class="row space20"></div>
+                        <div class="g-recaptcha" data-sitekey="6LeV8DcUAAAAANUqxd7WhrHpUoWd0HNRyTbbUIef"></div>
+                        <div class="row space20"></div>
+                        <div class="row">
+                            <div class="span2">
+                                <button class="btn left"><i class="icon-ok"></i> Send Message</button>
+                            </div>
+                            <div class="span6">
+                                <div class="alert alert-error error" id="errDiv" style="display:none;">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>Error!</strong> Message sending failed, try again.
+                                </div>
+                                <div class="alert alert-success thank" id="sccDiv" style="display:none;">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>Thank You!</strong> Your message successfully sent.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row space20"></div>
+</form>
+                <!-- Blog Form End -->
 
             </div>
         </div>
