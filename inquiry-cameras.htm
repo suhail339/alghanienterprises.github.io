@@ -136,16 +136,17 @@
                                 <option value="Other">OTHER</option>
                             </select>
                         </div>
-                        </div>
+                    </div>
                     <div class="row">
                         <div class="span4" style="margin-top:10px;">
                             <select id="maintenance" name="maintenance" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Maintenance?</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
                         </div>
                         <div class="span4">
-                               <input name="cameraQuantity" id="cameraQuantity" type="number" maxlength="10" placeholder="1">
+                            <input name="cameraQuantity" id="cameraQuantity" type="number" maxlength="10" placeholder="quantity">
                         </div>
                     </div>
                     <div class="row">
@@ -203,9 +204,7 @@
     <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript">
-
     var frm = $('#contactForm');
-
     frm.submit(function (e) {
         e.preventDefault();
         $("#errDiv").hide();
