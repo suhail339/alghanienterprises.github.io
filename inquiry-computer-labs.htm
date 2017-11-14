@@ -235,6 +235,39 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+    var frm = $('#contactForm');
+    frm.submit(function (e) {
+        e.preventDefault();
+        $("#errDiv").hide();
+        $("#sccDiv").hide();
+        var a = frm.serialize();
+        console.log(a);
+        var b = JSON.stringify(a);
+        console.log(b);
+        $.ajax({
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+            },
+            type: "POST", /* or type:"GET" or type:"PUT" */
+            dataType: "json",
+            url: frm.attr('action'),
+            data: JSON.stringify(a),
+            success: function (data) {
+                $("#sccDiv").show();
+                $("#errDiv").hide();
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                $("#errDiv").show();
+                $("#sccDiv").hide();
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+    </script>
 </body>
 </html>
