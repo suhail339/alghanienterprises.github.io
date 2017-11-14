@@ -81,7 +81,7 @@
         <div class="container">
 
             <div class="eight columns">
-                <h3 class="left">Cameras & Installation</h3>
+                <h3 class="left">School/Office Furniture</h3>
             </div>
 
             <div class="eight columns">
@@ -89,7 +89,7 @@
                     <ul>
                         <li>You are here:</li>
                         <li><a href="#">Inquiry</a></li>
-                        <li>Cameras & Installation</li>
+                        <li>School/Office Furniture</li>
                     </ul>
                 </nav>
             </div>
@@ -107,6 +107,103 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Blog Form -->
+                <form class="form-comment" id="contactForm" name="contactForm" method="post" action="http://alghani-email.gear.host/api/email">
+                    <div class="row">
+                        <div class="span4">
+                            <input name="blank" id="blank" type="hidden">
+                            <input name="contactType" id="contactType" value="inquiry-furniture" type="hidden">
+                            <input name="name" id="name" maxlength="20" required type="text" placeholder="Name">
+                        </div>
+                        <div class="span4">
+                            <input name="email" id="email" maxlength="30" required type="email" placeholder="your-email-id@company.com">
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span4">
+                            <input name="phone" id="phone" type="text" maxlength="20" placeholder="Phone Number">
+                        </div>
+                        <div class="span4">
+                            <input name="instName" id="instName" type="text" maxlength="10" placeholder="Company Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span8" style="margin-top:10px;">
+                            <select id="furnitureType" name="furnitureType" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Select Type</option>
+                                <option value="Wooden">Wooden</option>
+                                <option value="Bamboo">Bamboo</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Glass">Glass</option>
+                                <option value="Plastic">Plastic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span4" style="margin-top:10px;">
+                            <select id="chairType" name="workStation" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Chairs Type</option>
+                                <option value="Revolving chairs">Revolving chairs</option>
+                                <option value="Visitor Chairs">Visitor Chairs</option>
+                                <option value="Executive Chair">Executive Chair</option>
+                                <option value="Executive Chair">Sofa Seats</option>
+                            </select>
+                        </div>
+                        <div class="span4" style="margin-top:10px;">
+                            <select id="tableType" name="tableType" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Tables Type</option>
+                                <option value="Executive Table">Executive Table</option>
+                                <option value="Tables with Side Racks">With Side Racks</option>
+                                <option value="Center Table">Center Table</option>
+                                <option value="Center Table">Center Table</option>
+                                <option value="Training Hall ">Training Hall</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span4" style="margin-top:10px;">
+                            <select id="receptionCounter" name="receptionCounter" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Reception Counter ?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="span4" style="margin-top:10px;">
+                            <select id="workStationQ" name="workStationQ" style="width:100%;background-color:#fb8865;height:37px;line-height:37px;">
+                                <option selected disabled>Work Station ?</option>
+                                <option value="2 Seat">2 Seat Work Station</option>
+                                <option value="4 Seat">4 Seat Work Station</option>
+                                <option value="8 Seat">8 Seat Work Station</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span8">
+                            <textarea name="message" id="message" maxlength="500"></textarea>
+                        </div>
+                    </div>
+                    <div class="row space20"></div>
+                    <div class="g-recaptcha" data-sitekey="6LeV8DcUAAAAANUqxd7WhrHpUoWd0HNRyTbbUIef"></div>
+                    <div class="row space20"></div>
+                    <div class="row">
+                        <div class="span2">
+                            <button class="btn left"><i class="icon-ok"></i> Send Message</button>
+                        </div>
+                        <div class="span6">
+                            <div class="alert alert-error error" id="errDiv" style="display:none;">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Error!</strong> Message sending failed, try again.
+                            </div>
+                            <div class="alert alert-success thank" id="sccDiv" style="display:none;">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Thank You!</strong> Your message successfully sent.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row space20"></div>
+                </form>
+                <!-- Blog Form End -->
 
             </div>
         </div>
@@ -134,6 +231,39 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+    var frm = $('#contactForm');
+    frm.submit(function (e) {
+        e.preventDefault();
+        $("#errDiv").hide();
+        $("#sccDiv").hide();
+        var a = frm.serialize();
+        console.log(a);
+        var b = JSON.stringify(a);
+        console.log(b);
+        $.ajax({
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+            },
+            type: "POST", /* or type:"GET" or type:"PUT" */
+            dataType: "json",
+            url: frm.attr('action'),
+            data: JSON.stringify(a),
+            success: function (data) {
+                $("#sccDiv").show();
+                $("#errDiv").hide();
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                $("#errDiv").show();
+                $("#sccDiv").hide();
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+    </script>
 </body>
 </html>
